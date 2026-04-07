@@ -1,0 +1,43 @@
+small_version: "1.0.0"
+owner: "agent"
+tasks:
+  - id: "task-bootstrap"
+    title: "Bootstrap repo and align SMALL artifacts"
+    status: "completed"
+    steps:
+      - "Inspect the repo, harness rules, and available tooling"
+      - "Define task structure for the POC run"
+      - "Record initial progress evidence"
+    acceptance:
+      - "Plan contains concrete tasks for implementation and verification"
+      - "Progress entries reference valid task IDs"
+  - id: "task-scaffold"
+    title: "Scaffold a local React Router 7 + React + Vite app"
+    status: "completed"
+    steps:
+      - "Create package.json, TypeScript config, Vite config, and app entrypoints"
+      - "Install local dependencies with pnpm"
+      - "Verify the dev/build toolchain resolves"
+    acceptance:
+      - "The repo contains a working RR7 + React + Vite app structure"
+      - "pnpm build completes successfully"
+  - id: "task-poc"
+    title: "Implement the Pretext chat evaluation interface"
+    status: "completed"
+    steps:
+      - "Seed multiple long chat sessions with mixed content"
+      - "Implement baseline vs Pretext modes with shared viewport behavior"
+      - "Expose instrumentation and stress controls for scroll and layout behavior"
+    acceptance:
+      - "UI includes session switching, mode toggle, metrics, and stress controls"
+      - "Transcripts exercise variable-height content across long scroll sessions"
+  - id: "task-docs-verify"
+    title: "Document findings and run verification"
+    status: "completed"
+    steps:
+      - "Add concise evaluation notes in repo documentation"
+      - "Run formatter/lint/tests if present and at minimum run build"
+      - "Update SMALL progress and handoff artifacts for completion"
+    acceptance:
+      - "Repo docs summarize where Pretext helps, where it does not, and caveats"
+      - "Verification evidence is captured in progress.small.yml"

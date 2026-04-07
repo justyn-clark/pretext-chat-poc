@@ -1,0 +1,41 @@
+small_version: "1.0.0"
+owner: agent
+entries:
+    - command: small init
+      evidence: Initialized .small workspace and seeded canonical artifacts
+      notes: small init in /Users/jcnagent/Agent/Projects/web-platform/pretext-chat-poc
+      status: completed
+      task_id: meta/init
+      timestamp: "2026-04-03T05:26:01.064074000Z"
+    - evidence: Inspected repo layout, README, SMALL artifacts, and local Node/pnpm availability; identified placeholder SMALL plan and package install credential issue to work around.
+      notes: Bootstrap task started for Pretext chat POC.
+      status: in_progress
+      task_id: task-bootstrap
+      timestamp: "2026-04-03T05:28:32.384732000Z"
+    - evidence: Created a local React + React Router 7 + Vite scaffold, then reconstructed a runnable local node_modules tree from the readable pnpm store using scripts/extract-store-packages.mjs because normal pnpm install was blocked by the offline cache layout.
+      notes: Vite 7.3.1 was selected from the cache because older cached Vite/esbuild combinations were incomplete.
+      status: completed
+      task_id: task-scaffold
+      timestamp: "2026-04-03T05:49:42.059541000Z"
+    - evidence: Updated README.md with concise evaluation findings and offline caveats, ignored local build artifacts in .gitignore, and verified the app builds successfully with node node_modules/vite/dist/node/cli.js build.
+      notes: No dedicated formatter, lint, or tests were present in the repo; build verification was used as the required minimum.
+      status: completed
+      task_id: task-docs-verify
+      timestamp: "2026-04-03T05:50:18.105393000Z"
+    - evidence: Implemented the seeded chat evaluation app with route-driven session switching, long mixed-content transcripts, baseline versus assisted measurement modes, virtualization metrics, anchor correction tracking, and stress controls for width, density, line length mix, and session scale.
+      notes: The assisted lane uses a local canvas-based prepare/layout shim aligned to Pretext-style measurement because the published package was unavailable offline.
+      status: completed
+      task_id: task-poc
+      timestamp: "2026-04-03T05:50:18.105394000Z"
+    - evidence: Replaced the handwritten pretext-lite shim with the actual @chenglou/pretext 0.0.4 package, added a thin runtime-counter wrapper in src/pretext-runtime.js, and verified the assisted lane runs through the real package in the browser.
+      notes: Actual package fetched from the npm tarball and unpacked into node_modules/@chenglou/pretext because normal package-manager install remained constrained in this environment.
+      replayId: b8e445847e60cfc613065d66ce4cd358e1c272fd122a1e4d92f0c5947dedf3c9
+      status: completed
+      task_id: task-poc
+      timestamp: "2026-04-03T17:22:32.228316000Z"
+    - evidence: Updated README and in-app copy to state that the assisted lane now uses the actual @chenglou/pretext package; verified production build passes and browser smoke test loads the Pretext-assisted mode with live runtime counters.
+      notes: 'Build command: node node_modules/vite/dist/node/cli.js build. Browser smoke test: local Vite dev server at 127.0.0.1:4173 with Pretext-assisted mode selected.'
+      replayId: b8e445847e60cfc613065d66ce4cd358e1c272fd122a1e4d92f0c5947dedf3c9
+      status: completed
+      task_id: task-docs-verify
+      timestamp: "2026-04-03T17:22:32.265107000Z"

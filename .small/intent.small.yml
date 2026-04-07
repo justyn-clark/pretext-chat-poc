@@ -1,0 +1,7 @@
+intent: Evaluate Pretext for long chat-style interfaces in a React Router 7 + React + Vite proof of concept
+owner: human
+scope:
+    exclude: []
+    include: []
+small_version: "1.0.0"
+success_criteria: []
