@@ -2,19 +2,25 @@
 
 Local proof of concept for evaluating the actual `@chenglou/pretext` package in a long chat interface built with React Router 7 + React + Vite.
 
+<p align="center">
+  <img src="./pretext-chat.png" alt="Screenshot of the Pretext chat POC showing a long chat transcript with measurement metrics and stress controls." width="900">
+</p>
+
+<p align="center"><em>Long-chat virtualization playground with Pretext-assisted measurement and live layout instrumentation.</em></p>
+
 ## Run
 
-This sandbox could not perform a normal `pnpm install` because the needed packages were only partially available in the cached store. To keep the repo local and runnable, the React/Vite stack was reconstructed from the readable pnpm store into `node_modules/`, and the actual `@chenglou/pretext` `0.0.4` package was fetched from the npm tarball and unpacked into `node_modules/@chenglou/pretext`.
+Install dependencies and start the Vite dev server:
 
 ```bash
-node scripts/extract-store-packages.mjs
-node node_modules/vite/dist/node/cli.js dev
+npm install
+npm run dev
 ```
 
 Build verification:
 
 ```bash
-node node_modules/vite/dist/node/cli.js build
+npm run build
 ```
 
 ## What The POC Includes
