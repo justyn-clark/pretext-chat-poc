@@ -56,3 +56,10 @@ npm run build
 ## Notes
 
 This is an evaluation tool, not a production chat client.
+
+The current repo state is the public-release POC: it uses the published
+`@chenglou/pretext` package, keeps local instrumentation around the measurement
+calls, and exists to compare browser-native row measurement with the assisted
+measurement lane under long-chat stress.
+
+See `docs/current-state.md` for the current evaluation boundary.
